@@ -42,7 +42,7 @@ gallons_lemon_juice_cups = new_lemon_juice_cups / 16.0
 gallons_water_cups = new_water_cups / 16.0
 gallons_agave_nectar_cups = new_agave_nectar_cups / 16.0
 
-print(f'{gallons_lemon_juice_cups:.2f} cup(s) lemon juice')
-print(f'{gallons_water_cups:.2f} cup(s) water')
-print(f'{gallons_agave_nectar_cups:.2f} cup(s) agave nectar\n')
+print(f'{gallons_lemon_juice_cups:.2f} gallon(s) lemon juice')
+print(f'{gallons_water_cups:.2f} gallon(s) water')
+print(f'{gallons_agave_nectar_cups:.2f} gallon(s) agave nectar')
 
