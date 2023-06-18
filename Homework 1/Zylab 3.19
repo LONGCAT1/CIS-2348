@@ -8,7 +8,7 @@ print('Enter wall width (feet):')
 width_ft = int(input())
 
 area_sq_ft = height_ft * width_ft
-print('Wall area:', '{:.2f}'.format(area_sq_ft), 'square feet')
+print('Wall area:', area_sq_ft, 'square feet')
 
 gallons_needed = area_sq_ft/350.00
 print('Paint needed:', '{:.2f}'.format(gallons_needed), 'gallons')
@@ -27,6 +27,6 @@ elif paint_color == 'blue':
 elif paint_color == 'green':
   cost = 23
 
-print('Cost of purchasing red paint: $' + cost)
+print('Cost of purchasing', paint_color, 'paint: $' + cost)
 
 
