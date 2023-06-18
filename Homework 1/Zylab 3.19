@@ -1,1 +1,32 @@
+#print statements & get inputs
+import math
+
+print('Enter wall height (feet):')
+height_ft = int(input())
+
+print('Enter wall width (feet):')
+width_ft = int(input())
+
+area_sq_ft = height_ft * width_ft
+print('Wall area:', '{:.2f}'.format(area_sq_ft), 'square feet')
+
+gallons_needed = area_sq_ft/350.00
+print('Paint needed:', '{:.2f}'.format(gallons_needed), 'gallons')
+
+cans_needed = math.ceil(gallons_needed)
+print('Cans needed:', cans_needed, 'can(s)\n')
+
+print('Choose a color to paint the wall:')
+paint_color = input()
+cost = 0
+
+if paint_color == 'red'
+  cost = 35
+elif paint_color == 'blue'
+  cost = 25
+elif paint_color == 'green'
+  cost = 23
+
+print('Cost of purchasing red paint: $', cost)
+
 
