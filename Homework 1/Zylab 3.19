@@ -18,19 +18,16 @@ print('Cans needed:', cans_needed, 'can(s)\n')
 
 print('Choose a color to paint the wall:')
 paint_color = input()
-cost_string = '0'
+
 cost_int = 0
 
 if paint_color == 'red':
   cost_int *= cans_needed
-  cost = 'cost_int'
 elif paint_color == 'blue':
   cost_int *= cans_needed
-  cost = 'cost_int'
 elif paint_color == 'green':
   cost_int *= cans_needed
-  cost = 'cost_int'
 
-print('Cost of purchasing', paint_color, 'paint: $' + cost)
+print('Cost of purchasing', paint_color, 'paint: $' + str(cost_int))
 
 
