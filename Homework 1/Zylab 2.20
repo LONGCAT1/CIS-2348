@@ -10,12 +10,16 @@ agave_nectar_cups = float(input())
 print('How many servings does this make?\n')
 servings = int(input())
 
+#first serving
+
 print('Lemonade ingredients - yields', f'{servings:.2f}', 'servings')
 print(f'{lemon_juice_cups:.2f} cup(s) lemon juice')
 print(f'{water_cups:.2f} cup(s) water')
 print(f'{agave_nectar_cups:.2f} cup(s) agave nectar\n')
 
 print('How many servings would you like to make?\n')
+
+#second serving
 
 new_servings = int(input())
 print(f'Lemonade ingredients - yields {new_servings:.2f} servings')
@@ -26,7 +30,19 @@ new_lemon_juice_cups = lemon_juice_cups * servings_multiplier
 new_water_cups = water_cups * servings_multiplier
 new_agave_nectar_cups = agave_nectar_cups * servings_multiplier
 
-print('Lemonade ingredients - yields', f'{new_servings:.2f}', 'servings')
 print(f'{new_lemon_juice_cups:.2f} cup(s) lemon juice')
 print(f'{new_water_cups:.2f} cup(s) water')
 print(f'{new_agave_nectar_cups:.2f} cup(s) agave nectar\n')
+
+# gallons
+
+print('Lemonade ingredients - yields', f'{new_servings:.2f}', 'servings')
+
+gallons_lemon_juice_cups = new_lemon_juice_cups / 16.0
+gallons_water_cups = new_water_cups / 16.0
+gallons_agave_nectar_cups = new_agave_nectar_cups / 16.0
+
+print(f'{gallons_lemon_juice_cups:.2f} cup(s) lemon juice')
+print(f'{gallons_water_cups:.2f} cup(s) water')
+print(f'{gallons_agave_nectar_cups:.2f} cup(s) agave nectar\n')
+
