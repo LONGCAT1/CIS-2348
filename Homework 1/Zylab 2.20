@@ -21,3 +21,12 @@ new_servings = int(input())
 print(f'Lemonade ingredients - yields {new_servings:.2f} servings')
 
 servings_multiplier = new_servings/servings
+
+new_lemon_juice_cups = lemon_juice_cups * servings_multiplier
+new_water_cups = water_cups * servings_multiplier
+new_agave_nectar_cups = agave_nectar_cups * servings_multiplier
+
+print('Lemonade ingredients - yields', f'{new_servings:.2f}', 'servings')
+print(f'{new_lemon_juice_cups:.2f} cup(s) lemon juice')
+print(f'{new_water_cups:.2f} cup(s) water')
+print(f'{new_agave_nectar_cups:.2f} cup(s) agave nectar\n')
