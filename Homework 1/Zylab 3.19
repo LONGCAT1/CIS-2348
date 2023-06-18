@@ -20,13 +20,13 @@ print('Choose a color to paint the wall:')
 paint_color = input()
 cost = 0
 
-if paint_color == 'red'
+if paint_color == 'red':
   cost = 35
-elif paint_color == 'blue'
+elif paint_color == 'blue':
   cost = 25
-elif paint_color == 'green'
+elif paint_color == 'green':
   cost = 23
 
-print('Cost of purchasing red paint: $', cost)
+print('Cost of purchasing red paint: $' + cost)
 
 
