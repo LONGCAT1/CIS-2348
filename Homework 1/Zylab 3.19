@@ -22,10 +22,13 @@ paint_color = input()
 cost_int = 0
 
 if paint_color == 'red':
+  cost_int = 35
   cost_int *= cans_needed
 elif paint_color == 'blue':
+  cost_int = 25
   cost_int *= cans_needed
 elif paint_color == 'green':
+  cost_int = 23
   cost_int *= cans_needed
 
 print('Cost of purchasing', paint_color, 'paint: $' + str(cost_int))
