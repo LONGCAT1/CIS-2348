@@ -1,0 +1,50 @@
+print('Davy's auto shop services')
+print('Oil change -- $35')
+print('Tire rotation -- $19')
+print('Car wash -- $7')
+print('Car wax -- $12')
+
+print('Select first service:')
+print('Select second service:')
+
+first_service = input()
+second_service = input()
+
+service1_price = 0
+service2_price = 0
+
+if first_service == 'Oil change':
+  service1_price = 35
+elif first_service == 'Tire rotation':
+  service1_price = 19
+elif first_service == 'Car wash':
+  service1_price = 7
+elif first_service == 'Car wax':
+  service1_price = 12
+
+if second_service == 'Oil change':
+  service2_price = 35
+elif second_service == 'Tire rotation':
+  service2_price = 19
+elif second_service == 'Car wash':
+  service2_price = 7
+elif second_service == 'Car wax':
+  service2_price = 12
+elif second_service == '-':
+  service2_price = 0
+  second_service = 'No service'
+
+if second_service != '-':
+  print('Davy's auto shop invoice\n')
+  print('Service 1:', first_service + ',' , '$' + str(service1_price))
+  print('Service 2:' , second_service + ',' , '$' + str(service2_price))
+else:
+  print('Davy's auto shop invoice\n')
+  print('Service 1:', first_service + ',' , '$' + str(service1_price))
+  print('Service 2:' , second_service)
+print('\n')
+
+total_price = service1_price + service2_price
+print('Total: $' + str(total_price))
+
+
