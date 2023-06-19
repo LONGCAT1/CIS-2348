@@ -1,4 +1,4 @@
-print('Davy's auto shop services')
+print('Davy\'s auto shop services')
 print('Oil change -- $35')
 print('Tire rotation -- $19')
 print('Car wash -- $7')
@@ -35,11 +35,11 @@ elif second_service == '-':
   second_service = 'No service'
 
 if second_service != '-':
-  print('Davy's auto shop invoice\n')
+  print('Davy\'s auto shop invoice\n')
   print('Service 1:', first_service + ',' , '$' + str(service1_price))
   print('Service 2:' , second_service + ',' , '$' + str(service2_price))
 else:
-  print('Davy's auto shop invoice\n')
+  print('Davy\'s auto shop invoice\n')
   print('Service 1:', first_service + ',' , '$' + str(service1_price))
   print('Service 2:' , second_service)
 print('\n')
