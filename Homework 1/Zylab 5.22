@@ -37,22 +37,22 @@ elif second_service == '-':
   service2_price = 0
   second_service = 'No service'
 
-if second_service != 'No service':
+if second_service == 'No service':
   print('Davy\'s auto shop invoice\n')
   print('Service 1:', first_service + ',' , '$' + str(service1_price))
-  print('Service 2:' , second_service + ',' , '$' + str(service2_price))
-elif first_service != 'No service':
+  print('Service 2:' , second_service)
+elif first_service == 'No service':
   print('Davy\'s auto shop invoice\n')
   print('Service 1:', first_service)
   print('Service 2:' , second_service + ',' , '$' + str(service2_price))
 elif (first_service != 'No service') and (second_service != 'No service'):
   print('Davy\'s auto shop invoice\n')
   print('Service 1:', first_service + ',' , '$' + str(service1_price))
-  print('Service 2:' , second_service)
+  print('Service 2:' , second_service + ',' , '$' + str(service2_price))
 
 #print('\n')
 
 total_price = service1_price + service2_price
-print('Total: $' + str(total_price))
+print('\nTotal: $' + str(total_price))
 
 
