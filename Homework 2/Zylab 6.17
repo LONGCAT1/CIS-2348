@@ -2,7 +2,7 @@ input_password = input()
 size = len(input_password)
 
 for i in range(size):
-  while j < size:
+  for j in range(size):
     if input_password[j] == 'i':
       input_password[j] = '!'
     elif input_password[j] == 'a':
