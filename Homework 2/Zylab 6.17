@@ -6,13 +6,13 @@ for i in range(size):
     if input_password[j] == 'i':
       input_password[j] = '!'
     elif input_password[j] == 'a':
-      input_password[j] = '@'
+      input_password[j] = "@"
     elif input_password[j] == 'm':
-      input_password[j] = 'M'
+      input_password[j] = "M"
     elif input_password[j] == 'B':
       input_password[j] = '8'
     elif input_password[j] == 'o':
-      input_password[j] = '.'
+      input_password[j] = "."
 
 
-print(input_password)
+print(input_password + "q*s")
