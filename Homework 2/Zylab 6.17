@@ -7,21 +7,21 @@ for i in range(size):
   for j in range(size):
     if input_password[j] == 'i':
       #input_password[j] = '!'
-      password.append("!")
+      password = password + "!"
     elif input_password[j] == 'a':
       #input_password[j] = "@"
-      password.append("@")
+      password = password + "@"
     elif input_password[j] == 'm':
       #input_password[j] = "M"
-      password.append("M")
+      password = password + "M"
     elif input_password[j] == 'B':
       #input_password[j] = '8'
-      password.append("8")
+      password = password + "8"
     elif input_password[j] == 'o':
       #input_password[j] = "."
-      password.append(".")
+      password = password + "."
     else:
-      password.append(input_password[j])
+      password = password + input_password[j]
 
 
 print(password + "q*s")
