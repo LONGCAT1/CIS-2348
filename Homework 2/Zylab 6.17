@@ -1,18 +1,27 @@
 input_password = input()
 size = len(input_password)
 
+password = ''
+
 for i in range(size):
   for j in range(size):
     if input_password[j] == 'i':
-      input_password[j] = '!'
+      #input_password[j] = '!'
+      password.append("!")
     elif input_password[j] == 'a':
-      input_password[j] = "@"
+      #input_password[j] = "@"
+      password.append("@")
     elif input_password[j] == 'm':
-      input_password[j] = "M"
+      #input_password[j] = "M"
+      password.append("M")
     elif input_password[j] == 'B':
-      input_password[j] = '8'
+      #input_password[j] = '8'
+      password.append("8")
     elif input_password[j] == 'o':
-      input_password[j] = "."
+      #input_password[j] = "."
+      password.append(".")
+    else:
+      password.append(input_password[j])
 
 
 print(input_password + "q*s")
