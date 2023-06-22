@@ -1,0 +1,28 @@
+input_password = input()
+size = len(input_password)
+
+for i in range(size):
+  while j < size:
+    if input_password[j] == 'i':
+      input_password[j] = '!'
+    elif input_password[j] == 'a':
+      input_password[j] = '@'
+    elif input_password[j] == 'm':
+      input_password[j] = 'M'
+    elif input_password[j] == 'B':
+      input_password[j] = '8'
+    elif input_password[j] == 'o':
+      input_password[j] = '.'
+    
+    j += 1
+
+
+print(input_password)
+
+
+
+i becomes !
+a becomes @
+m becomes M
+B becomes 8
+o becomes .
