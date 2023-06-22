@@ -18,11 +18,3 @@ for i in range(size):
 
 
 print(input_password)
-
-
-
-i becomes !
-a becomes @
-m becomes M
-B becomes 8
-o becomes .
