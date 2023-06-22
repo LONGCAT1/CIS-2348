@@ -13,8 +13,6 @@ for i in range(size):
       input_password[j] = '8'
     elif input_password[j] == 'o':
       input_password[j] = '.'
-    
-    j += 1
 
 
 print(input_password)
