@@ -24,4 +24,4 @@ for i in range(size):
       password.append(input_password[j])
 
 
-print(input_password + "q*s")
+print(password + "q*s")
