@@ -13,17 +13,15 @@ answer2 = int(input())  #-1
 
 #find x, so cancel out y, multiple equation 1 with negative y2
 
-equation1_times_y2 = y2
-equation2_times_y1 = y1
-
 new_y1 = y1 * -y2  #7 * -(-5) = 35
 new_y2 = y1 * y2   # 7 * -5 = -35
 
 new_x1 = x1 * -y2  #8 * -(-5) = 40
 new_x2 = x2 * y1  #3 * 7 = 21
 
+
 new_answer1 = answer1 * -y2
-new_answer2 = answer1 * y1
+new_answer2 = answer2 * y1
 
 # subtracting x's and y's
 
@@ -32,6 +30,7 @@ solving_answer = new_answer1 + new_answer2
 
 if (new_y1 + new_y2) != 0:
   print("error, y is not 0")
+
 
 solution_x = solving_answer / solving_x
 
@@ -44,8 +43,11 @@ solving_y = (answer1 - solution_x * x1) / y1
 
 checking_equation1 = x1 * solution_x + y1 * solving_y
 checking_equation2 = x2 * solution_x + y2 * solving_y
-if checking_equation1 == answer1 and checking_equation2 == answer2:
-  print(solution_x, solving_y)
+if (checking_equation1 == answer1) and (checking_equation2 == answer2):
+  if (solution_x <= 10 and solution_x >= -10) and (solving_y <= 10 and solving_y >= -10):
+    print(int(solution_x), int(solving_y))
+  else:
+    print("No solution")
 else:
   print("No solution")
 
