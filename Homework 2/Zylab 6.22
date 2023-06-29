@@ -1,32 +1,37 @@
+#inputs  8   7    38     3     -5      -1
+
 # equation 1
 
-x1 = int(input())
-y1 = int(input())
-answer1 = int(input())
+x1 = int(input()) #8
+y1 = int(input()) #7
+answer1 = int(input()) # 38
 
 # equation 2
-x2 = int(input())
-y2 = int(input())
-answer2 = int(input())
+x2 = int(input())  #3
+y2 = int(input())  # -5
+answer2 = int(input())  #-1
 
 #find x, so cancel out y, multiple equation 1 with negative y2
 
 equation1_times_y2 = y2
 equation2_times_y1 = y1
 
-new_y1 = y1 * -y2
-new_y2 = y1 * y2
+new_y1 = y1 * -y2  #7 * -(-5) = 35
+new_y2 = y1 * y2   # 7 * -5 = -35
 
-new_x1 = x1 * -y2
-new_x2 = x1 * y2
+new_x1 = x1 * -y2  #8 * -(-5) = 40
+new_x2 = x2 * y1  #3 * 7 = 21
 
-new_answer1 = answer1 * -answer2
-new_answer2 = answer1 * answer2
+new_answer1 = answer1 * -y2
+new_answer2 = answer1 * y1
 
 # subtracting x's and y's
 
 solving_x = new_x1 + new_x2
 solving_answer = new_answer1 + new_answer2
+
+if (new_y1 + new_y2) != 0:
+  print("error, y is not 0")
 
 solution_x = solving_answer / solving_x
 
