@@ -1,0 +1,48 @@
+# equation 1
+
+x1 = int(input())
+y1 = int(input())
+answer1 = int(input())
+
+# equation 2
+x2 = int(input())
+y2 = int(input())
+answer2 = int(input())
+
+#find x, so cancel out y, multiple equation 1 with negative y2
+
+equation1_times_y2 = y2
+equation2_times_y1 = y1
+
+new_y1 = y1 * -y2
+new_y2 = y1 * y2
+
+new_x1 = x1 * -y2
+new_x2 = x1 * y2
+
+new_answer1 = answer1 * -answer2
+new_answer2 = answer1 * answer2
+
+# subtracting x's and y's
+
+solving_x = new_x1 + new_x2
+solving_answer = new_answer1 + new_answer2
+
+solution_x = solving_answer / solving_x
+
+# x found, now find y
+
+solving_y = (answer1 - solution_x * x1) / y1
+
+
+# check solutions for x and y work for both equations
+
+checking_equation1 = x1 * solution_x + y1 * solving_y
+checking_equation2 = x2 * solution_x + y2 * solving_y
+if checking_equation1 == answer1 and checking_equation2 == answer2:
+  print(solution_x, solving_y)
+else:
+  print("No solution")
+
+
+
