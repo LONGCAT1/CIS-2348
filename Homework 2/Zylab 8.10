@@ -1,0 +1,16 @@
+user_input = input() #remove whitespace
+
+no_spaces = user_input.split()
+
+new_str = ''.join(no_spaces)
+
+reversed_str = ""
+
+for i in new_str:
+  reversed_str = i + reversed_str
+
+if user_input == reversed_str:
+  print(user_input, "is a palindrome")
+else:
+  print(user_input, "is not a palindrome")
+
