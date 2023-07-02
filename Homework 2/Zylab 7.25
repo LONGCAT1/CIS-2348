@@ -1,0 +1,85 @@
+def exact_change(input):
+  pennies = 0
+  nickels = 0
+  dimes = 0
+  quarters = 0
+  dollars = 0
+  holder = 0
+  
+  if input <= 0:
+    return pennies, nickels, dimes, quarters, dollars = 0
+
+  if input >= 100:
+    holder = input % 100
+    dollars = input / 100
+    
+    quarters = holder / 25
+    holder %= 25
+
+    dimes = holder / 10
+    holder %= 10
+
+    nickels = holder / 5
+    holder %= 5
+
+    pennies = holder
+
+  else:
+
+    dollars = 0
+    
+    quarters = holder / 25
+    holder %= 25
+
+    dimes = holder / 10
+    holder %= 10
+
+    nickels = holder / 5
+    holder %= 5
+
+    pennies = holder
+
+  return pennies, nickels, dimes, quarters, dollars
+
+
+if name == 'main':
+
+  input_val = int(input()) 
+
+  num_dollars, num_quarters, num_dimes, num_nickels, num_pennies = exact_change(input_val)
+
+  str_penny = "penny"
+  str_nickel = "nickel"
+  str_dime = "dime"
+  str_quarter = "quarter"
+  str_dollar = "dollar"
+
+
+  
+  if num_dollars == 0 or num_dollars > 1:
+    str_dollar = "dollars"
+  if num_quarters == 0 or num_quarters > 1:
+    str_quarter = "quarters"
+  if num_dimes == 0 or num_dimes > 1:
+    str_dime = "dimes"
+  if num_nickels == 0 or num_nickels > 1:
+    str_nickel = "nickels"
+  if num_pennies == 0 or num_pennies > 1:
+    str_penny = "pennies"
+
+
+  if input_val <= 0:
+    print("no change")
+  else:
+    if num_dollars > 0:
+      print(num_dollars, str_dollars)
+    if num_quarters > 0:
+      print(num_quarters, str_quarter)
+    if num_dimes > 0:
+      print(num_dimes, str_dime)
+    if num_nickels > 0:
+      print(num_nickels, str_nickel)
+    if num_pennies > 0:
+      print(num_pennies, str_penny)  
+
+
