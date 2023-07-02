@@ -1,50 +1,35 @@
-def exact_change(input):
-  pennies = 0
-  nickels = 0
-  dimes = 0
-  quarters = 0
-  dollars = 0
+def exact_change(user_total):
+  num_pennies = 0
+  num_nickels = 0
+  num_dimes = 0
+  num_quarters = 0
+  num_dollars = 0
   holder = 0
+
+  holder = user_total % 100
+  num_dollars = user_total // 100
   
-  if input <= 0:
-    return 0
+  num_quarters = holder // 25
+  holder %= 25
 
-  if input >= 100:
-    holder = input % 100
-    dollars = input / 100
-    
-    quarters = holder / 25
-    holder %= 25
+  num_dimes = holder // 10
+  holder %= 10
 
-    dimes = holder / 10
-    holder %= 10
+  num_nickels = holder // 5
+  holder %= 5
 
-    nickels = holder / 5
-    holder %= 5
+  num_pennies = holder
 
-    pennies = holder
+  return (num_dollars, num_quarters, num_dimes, num_nickels, num_pennies)
 
-  else:
-
-    dollars = 0
-    
-    quarters = holder / 25
-    holder %= 25
-
-    dimes = holder / 10
-    holder %= 10
-
-    nickels = holder / 5
-    holder %= 5
-
-    pennies = holder
-
-  return pennies, nickels, dimes, quarters, dollars
-
-__name__ = "__main__"
-if name == 'main':
+#name = "main"
+if __name__ == '__main__':
 
   input_val = int(input()) 
+
+
+  #print(input_val)
+
 
   num_dollars, num_quarters, num_dimes, num_nickels, num_pennies = exact_change(input_val)
 
@@ -53,6 +38,10 @@ if name == 'main':
   str_dime = "dime"
   str_quarter = "quarter"
   str_dollar = "dollar"
+
+
+  #print(num_quarters)
+  #print(num_dimes)
 
 
   
@@ -68,11 +57,17 @@ if name == 'main':
     str_penny = "pennies"
 
 
+  #print("haha")
+  #print(num_quarters)
+  #print(num_dimes)
+
+
+
   if input_val <= 0:
     print("no change")
   else:
     if num_dollars > 0:
-      print(num_dollars, str_dollars)
+      print(num_dollars, str_dollar)
     if num_quarters > 0:
       print(num_quarters, str_quarter)
     if num_dimes > 0:
