@@ -41,7 +41,7 @@ def exact_change(input):
 
   return pennies, nickels, dimes, quarters, dollars
 
-
+__name__ = "__main__"
 if name == 'main':
 
   input_val = int(input()) 
