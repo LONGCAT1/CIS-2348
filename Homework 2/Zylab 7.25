@@ -1,3 +1,8 @@
+#Kimberly Jin
+#2053517
+
+
+
 def exact_change(user_total):
   num_pennies = 0
   num_nickels = 0
