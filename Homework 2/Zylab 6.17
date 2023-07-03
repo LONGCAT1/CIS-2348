@@ -1,3 +1,7 @@
+#Kimberly Jin
+#2053517
+
+
 input_password = input()
 size = len(input_password)
 
