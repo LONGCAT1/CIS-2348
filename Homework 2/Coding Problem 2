@@ -18,6 +18,13 @@ input file “inputDates.txt”, it writes out the correct ones into an
 output file called: “parsedDates.txt
 
 
+import datetime
+
+# get current date
+
+today = datetime.date.today()
+
+
 date = ''
 first_space = 0
 comma = 0
@@ -28,7 +35,7 @@ day = 1
 year = 1990
 
 while date = input():
-  if date[0].isalpha() == true:
+  if date[0].isalpha() == true and (date < today):
     comma = date.find(',')
     first_space = date.find(' ')
     second_space = date.find(' ', first_space+1)
