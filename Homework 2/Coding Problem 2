@@ -1,0 +1,63 @@
+Write a basic program that performs simple file and mathematical
+operations.
+a.
+Write a program that reads dates from input, one date per line. Each
+date's format must be as follows: March 1, 1990. Any date not following
+that format is incorrect and should be ignored. Use the find() method to
+parse the string and extract the date. The input ends with -1 on a line
+alone. Use the datetime module to get the current date. Ignore any dates
+that are later than the current date. Output each correct date as:
+3/1/1990.
+b.
+After the program is working as above, modify the program so that it
+reads all dates from an input file “inputDates.txt” (an Example file is
+attached).
+c.
+Modify your program further so that after parsing all dates from the
+input file “inputDates.txt”, it writes out the correct ones into an
+output file called: “parsedDates.txt
+
+
+date = ''
+first_space = 0
+comma = 0
+second_space = 0
+formatted_date = ''
+month = 1
+day = 1
+year = 1990
+
+while date = input():
+  if date[0].isalpha() == true:
+    comma = date.find(',')
+    first_space = date.find(' ')
+    second_space = date.find(' ', first_space+1)
+    day = date[comma-1:comma]
+    year = date[second_space+1:len(date)]
+
+    if date[0:first_space-1] == "January":
+      month = 1
+    elif date[0:first_space-1] == "Feburary":
+      month = 2
+    elif date[0:first_space-1] == "March":
+      month = 3
+    elif date[0:first_space-1] == "April":
+      month = 4
+    elif date[0:first_space-1] == "May":
+      month = 5
+    elif date[0:first_space-1] == "June":
+      month = 6
+    elif date[0:first_space-1] == "July":
+      month = 7
+    elif date[0:first_space-1] == "August":
+      month = 8
+    elif date[0:first_space-1] == "September":
+      month = 9
+    elif date[0:first_space-1] == "October":
+      month = 10
+    elif date[0:first_space-1] == "November":
+      month = 11
+    elif date[0:first_space-1] == "December":
+      month = 12
+    
+    print(
