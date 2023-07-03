@@ -1,21 +1,6 @@
-Write a basic program that performs simple file and mathematical
-operations.
-a.
-Write a program that reads dates from input, one date per line. Each
-date's format must be as follows: March 1, 1990. Any date not following
-that format is incorrect and should be ignored. Use the find() method to
-parse the string and extract the date. The input ends with -1 on a line
-alone. Use the datetime module to get the current date. Ignore any dates
-that are later than the current date. Output each correct date as:
-3/1/1990.
-b.
-After the program is working as above, modify the program so that it
-reads all dates from an input file “inputDates.txt” (an Example file is
-attached).
-c.
-Modify your program further so that after parsing all dates from the
-input file “inputDates.txt”, it writes out the correct ones into an
-output file called: “parsedDates.txt
+#Kimberly Jin
+# 2053517
+
 
 
 import datetime
@@ -23,7 +8,14 @@ import datetime
 # get current date
 
 today = datetime.date.today()
+#formatted as year-month-day
 
+
+input_file = “inputDates.txt”
+output_file = open(“parsedDates.txt", 'w')
+
+with open(input_file, 'r') as file:
+  date = file.readline()
 
 date = ''
 first_space = 0
@@ -34,8 +26,9 @@ month = 1
 day = 1
 year = 1990
 
-while date = input():
-  if date[0].isalpha() == true and (date < today):
+with open(input_file, 'r') as file:
+  date = file.readline()
+  if date[0].isalpha() == true and (',' in date == true):
     comma = date.find(',')
     first_space = date.find(' ')
     second_space = date.find(' ', first_space+1)
@@ -66,5 +59,13 @@ while date = input():
       month = 11
     elif date[0:first_space-1] == "December":
       month = 12
-    
-    print(
+    formatted_date = str(year) + "-" + str(month) + "-" + str(day)
+    if(formatted_date < today):
+      formatted_date = str(month) + "/" + str(day) + "/" + str(year)
+      output_file.write(formatted_date)
+      output_file.write("\n")
+      print(formatted_date)
+
+
+
+
