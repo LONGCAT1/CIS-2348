@@ -1,3 +1,8 @@
+#Kimberly Jin
+#2053517
+
+
+
 user_input = input() #remove whitespace
 
 no_spaces = user_input.split()
