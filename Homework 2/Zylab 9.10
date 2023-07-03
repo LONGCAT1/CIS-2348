@@ -12,20 +12,21 @@ input_file = input()
 
 #open and read
 
+word_freq = {}
+
 with open(input_file, 'r') as file:
   read_in = csv.reader(file)
-  for word in read_in:
-    word_list = word
-    print(word)
+  for line in read_in:
+    for word in line:
+      if word not in word_freq.keys():
+        word_freq[word] = 1
+      else:
+        word_freq[word] += 1 
 
 
-#file contains hello,cat,man,hey,dog,boy,Hello,man,cat,woman,dog,Cat,hey,boy
-
-#lower the case
-
-#lines.lower()
-
-#strip using ','  
 
 
-#frequency count
+#print(word_list) - prints a list
+
+for i, j in word_freq.items():
+  print(i, j)
