@@ -1,10 +1,5 @@
-Complete the FoodItem class by adding a constructor to initialize a food item. 
-The constructor should initialize the name to "None" and all other instance attributes to 0.0 by default. 
-If the constructor is called with a food name, grams of fat, grams of carbohydrates, and grams of protein, the constructor should assign each instance attribute with the appropriate parameter value.
-
-The given program accepts as input a food item name, fat, carbs, and protein and the number of servings. 
-The program creates a food item using the constructor parameters' default values and a food item using the input values. 
-The program outputs the nutritional information and calories per serving for both food items.
+#Kimberly Jin
+#2053517
 
 
 class FoodItem:
@@ -19,7 +14,7 @@ class FoodItem:
     calories = ((self.fat * 9) + (self.carbs * 4) + (self.protein * 4)) * num_servings;
     return calories
 
-def print_info(self):
+  def print_info(self):
     print('Nutritional information per serving of {}:'.format(self.name))
     print('   Fat: {:.2f} g'.format(self.fat))
     print('   Carbohydrates: {:.2f} g'.format(self.carbs))
@@ -28,17 +23,21 @@ def print_info(self):
 
 if __name__ == "__main__":
 
+
+  nutri_Info = FoodItem(input(), float(input()), float(input()), float(input()))
+  num_Servings = float(input())
+  
   default = FoodItem()
   default.print_info()
-  num_Servings = 0.0
-  num_Cals = get_calories(num_Servings)
+  
+  num_Cals = default.get_calories(num_Servings)
   print('Number of calories for {:.2f} serving(s): {:.2f}'.format(num_Servings, num_Cals))
   print()
   
   
-  nutri_Info = FoodItem(input(), float(input()), float(input()), float(input()))
-  num_Servings = float(input())
-  num_Cals = get_calories(num_Servings)
+  
+  num_Cals = nutri_Info.get_calories(num_Servings)
+  nutri_Info.print_info()
   
   print('Number of calories for {:.2f} serving(s): {:.2f}'.format(num_Servings, num_Cals))
 
