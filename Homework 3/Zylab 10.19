@@ -1,1 +1,146 @@
+class ItemToPurchase:
+	def __init__(self, item_name = "none", item_price = 0, item_quantity = 0, item_description = "none"):
+		self.item_name = item_name
+		self.item_price = item_price
+		self.item_quantity = item_quantity
+        self.item_description = item_description
+	def print_item_cost(self):
+		cost = self.item_quantity * self.item_price
+		print(self.item_name, self.item_quantity, "@ $" + str(int(self.item_price)) , "= $" + str(int(cost)))
+#new
+    def print_item_description(self, ItemToPurchase):
+        print(f'{ItemToPurchase.item_name}: {ItemToPurchase.item_description}' )
+  
+class ShoppingCart:
+    def __init__(self, customer_name = "none", current_date = "January 1, 2016"):
+        self.customer_name = customer_name
+        self.current_date = current_date
+        self.cart_items = []
+    def add_item(ItemToPurchase):
+        cart_items.append(ItemToPurchase)
+    def remove_item(item_name):
+        if item_name in self.cart_items:
+            self.cart_items.remove(item_name)
+        else:
+            print("Item not found in cart. Nothing removed.")
+    def modify_item(ItemToPurchase):
+        if ItemToPurchase.item_name in self.cart_items:
+            # FIXME - modify item in cart
+        else:
+            print("Item not found in cart. Nothing modified.")
+    def get_num_items_in_cart():
+        cart_size = len(self.cart_items)
+    def get_cost_of_cart():
+        #FIXME
+    def print_total():
+        print(self.customer_name, '-' , self.current_date)
+        print("Number of Items:", cart_size, '\n')
+        item_count = 0
+#FIXME
+        curr_item = self.cart_items[0]
+        for i in self.cart_items:
+            if curr_item == i:
+                item_count += 1
+        if cart_size == 0:
+            print("SHOPPING CART IS EMPTY")
+    def print_descriptions(ItemToPurchase):
+        #FIXME
+        print(self.customer_name, '-' , self.current_date)
+        print()
+        print("Item Descriptions")
+        curr_item = self.cart_items[0]
+        for i in self.cart_items:
+            if curr_item != i:
+                print(f'{i}: {ItemToPurchase.item_description}')
+            else:
+                curr_item = i
+
+
+if __name__ == "__main__":
+
+	print("Item 1")
+	print("Enter the item name:")
+	item = input()
+	
+	print("Enter the item price:")
+	item_price = float(input())
+	
+	print("Enter the item quantity:")
+	item_quantity = int(input())
+	
+	item1 = ItemToPurchase(item, item_price, item_quantity)
+	
+	# get item 2
+	
+	print()
+	print("Item 2")
+	print("Enter the item name:")
+	item = input()
+	
+	print("Enter the item price:")
+	item_price = float(input())
+	
+	print("Enter the item quantity:")
+	item_quantity = int(input())
+	
+	item2 = ItemToPurchase(item, item_price, item_quantity)
+	
+	print()
+	print("TOTAL COST")
+	
+	item1.print_item_cost()
+	item2.print_item_cost()
+	
+	print()
+	
+	temp = (item1.item_price * item1.item_quantity) + (item2.item_price * item2.item_quantity)
+	total = int(temp)
+	print("Total: $" + str(total))
+
+
+
+
+    #new
+
+    def print_menu(ShoppingCart):
+        print("MENU")
+        print("a - Add item to cart")
+        print("r - Remove item from cart")
+        print("c - Change item quantity")
+        print("i - Output items' descriptions")
+        print("o - Output shopping cart")
+        print("q - Quit")
+        print()
+        print("Choose an option:")
+
+
+    customer_name = input("Enter customer's name:")
+    current_date = input("Enter today's date:")
+
+    print("Customer name:", customer_name)
+    print("Today's date:", current_date)
+    new_shoppingcart = ShoppingCart(customer_name, current_date)
+
+
+    menu_option = ''
+    print_menu(new_shoppingcart)
+    menu_option = input()
+    if menu_option == 'a':
+        #FIXME
+    elif menu_option == 'r':
+        #FIXME
+    elif menu_option == 'c':
+        #FIXME
+    elif menu_option == 'i':
+        #FIXME
+    elif menu_option == 'o':
+        #FIXME
+    elif menu_option == 'q':
+        #FIXME
+    else:
+        print_menu(new_shoppingcart)
+        menu_option = input()
+    
+
+
 
