@@ -1,0 +1,33 @@
+class Team:
+
+  def __init__(self, teamname = 'none', teamwins = 0, team_losses = 0):
+    self.teamname = teamname 
+    self.teamwins = teamwins
+    self.team_losses = team_losses
+    
+  def get_win_percentage(self):
+    winPercentage = team_wins / (team_wins + team_losses)
+    #use floating-point division
+    return winPercentage
+
+  def print_outcome(self):
+    if self.teamwins > self.team_losses:
+      print("Congratulations, Team", self.teamname, "has a winning average!")
+    else:
+      print("Team", self.teamname, "has a losing average.")
+
+
+
+#class created
+#get inputs
+
+team_name = input()
+team_wins = int(input())
+team_losses = int(input())
+
+
+#create and print
+
+team_win_loss = Team(team_name, team_wins, team_losses)
+team_win_loss.print_outcome()
+  
