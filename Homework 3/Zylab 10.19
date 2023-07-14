@@ -16,13 +16,16 @@ class ShoppingCart:
         self.customer_name = customer_name
         self.current_date = current_date
         self.cart_items = []
+#menu option a
     def add_item(ItemToPurchase):
         cart_items.append(ItemToPurchase)
+#menu option r
     def remove_item(item_name):
         if item_name in self.cart_items:
             self.cart_items.remove(item_name)
         else:
             print("Item not found in cart. Nothing removed.")
+#menu option c
     def modify_item(ItemToPurchase):
         if ItemToPurchase.item_name in self.cart_items:
             # FIXME - modify item in cart
@@ -43,6 +46,7 @@ class ShoppingCart:
                 item_count += 1
         if cart_size == 0:
             print("SHOPPING CART IS EMPTY")
+#menu option i
     def print_descriptions(ItemToPurchase):
         #FIXME
         print(self.customer_name, '-' , self.current_date)
@@ -54,6 +58,13 @@ class ShoppingCart:
                 print(f'{i}: {ItemToPurchase.item_description}')
             else:
                 curr_item = i
+#menu option o
+	def output_shop_cart():
+		print("OUTPUT SHOPPING CART")
+		print(f'{self.customer_name}\'s Shopping Cart - {self.current_date}')
+		print("Number of Items:", len(self.cart_items))
+		print("\n")
+#FIXME
 
 
 if __name__ == "__main__":
@@ -125,22 +136,20 @@ if __name__ == "__main__":
     menu_option = ''
     print_menu(new_shoppingcart)
     menu_option = input()
-    if menu_option == 'a':
-        #FIXME
-    elif menu_option == 'r':
-        #FIXME
-    elif menu_option == 'c':
-        #FIXME
-    elif menu_option == 'i':
-        #FIXME
-    elif menu_option == 'o':
-        #FIXME
-    elif menu_option == 'q':
-        #FIXME
-    else:
-        print_menu(new_shoppingcart)
-        menu_option = input()
-    
+	while menu_option != 'q':
+	    if menu_option == 'a':
+	        new_shoppingcart.add_item(ItemToPurchase)
+	    elif menu_option == 'r':
+	        new_shoppingcart.remove_item(ITEM)
+	    elif menu_option == 'c':
+	        new_shoppingcart.modify_item(ItemToPurchase)
+	    elif menu_option == 'i':
+	        new_shoppingcart.print_descriptions()
+	    elif menu_option == 'o':
+	        new_shoppingcart.output_shop_cart()
+	    else:
+	        print_menu(new_shoppingcart)
+	        menu_option = input()
 
-
-
+	#continue after menu
+	
