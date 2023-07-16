@@ -1,1 +1,41 @@
+word_freq = {}
 
+temp = []
+word = input()
+temp = word.split(' ')
+
+for i in temp:
+    if i not in word_freq.keys():
+        word_freq[i] = 1
+    else:
+        word_freq[i] += 1 
+
+
+for i in temp:
+    print(i, word_freq[i])
+    
+
+
+
+
+
+
+"""
+word_freq = {}
+
+with open(input_file, 'r') as file:
+  read_in = csv.reader(file)
+  for line in read_in:
+    for word in line:
+      if word not in word_freq.keys():
+        word_freq[word] = 1
+      else:
+        word_freq[word] += 1 
+
+
+
+
+#print(word_list) - prints a list
+
+for i, j in word_freq.items():
+  print(i, j)"""
