@@ -1,0 +1,30 @@
+list = []
+
+
+num = input()
+list = num.split(" ")
+newList = []
+
+for i in list:
+    if int(i) >= 0:
+        newList.append(int(i))
+
+
+newList.sort()
+
+for i in newList:
+    print(i, end=" ")
+
+
+
+
+"""
+
+num = int(input())
+if num >= 0:
+    list.append(num)
+
+while str(num).isdigit() == True:
+    if num >= 0:
+        list.append(num)
+    num = int(input())    """
