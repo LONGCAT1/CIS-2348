@@ -1,0 +1,135 @@
+
+jersey = {}
+
+"""jersey['Player1'] = {}
+jersey['Player2'] = {}
+jersey['Player3'] = {}
+jersey['Player4'] = {}
+jersey['Player5'] = {}"""
+
+
+
+print("Enter player 1's jersey number:")
+num1 = int(input())
+print("Enter player 1's rating:")
+rating1 = int(input())
+print()
+
+print("Enter player 2's jersey number:")
+num2 = int(input())
+print("Enter player 2's rating:")
+rating2 = int(input())
+print()
+
+print("Enter player 3's jersey number:")
+num3 = int(input())
+print("Enter player 3's rating:")
+rating3 = int(input())
+print()
+
+print("Enter player 4's jersey number:")
+num4 = int(input())
+print("Enter player 4's rating:")
+rating4 = int(input())
+print()
+
+print("Enter player 5's jersey number:")
+num5 = int(input())
+print("Enter player 5's rating:")
+rating5 = int(input())
+print()
+
+"""jersey['Player1']['jerseyNumber'] = num1
+jersey["Player1"]['rating'] = rating1
+
+jersey['Player2']['jerseyNumber'] = num2
+jersey["Player2"]['rating'] = rating2
+
+jersey['Player3']['jerseyNumber'] = num3
+jersey["Player3"]['rating'] = rating3
+
+jersey['Player4']['jerseyNumber'] = num4
+jersey["Player4"]['rating'] = rating4
+
+jersey['Player5']['jerseyNumber'] = num5
+jersey["Player5"]['rating'] = rating5"""
+
+
+listofjerseynums = []
+listofjerseynums.append(num1)
+listofjerseynums.append(num2)
+listofjerseynums.append(num3)
+listofjerseynums.append(num4)
+listofjerseynums.append(num5)
+
+listofjerseynums.sort()
+
+jersey[num1] = rating1
+jersey[num2] = rating2
+jersey[num3] = rating3
+jersey[num4] = rating4
+jersey[num5] = rating5
+
+
+
+def printMenu():
+    print("MENU")
+    print("a - Add player")
+    print("d - Remove player")
+    print("u - Update player rating")
+    print("r - Output players above a rating")
+    print("o - Output roster")
+    print("q - Quit")
+    print()
+    print("Choose an option:")
+
+
+print("ROSTER")
+for i in listofjerseynums:
+    print(f'Jersey number: {i}, Rating: {jersey[i]}')
+print()
+
+
+#get menu outputs
+
+
+menu = input()
+printMenu()
+while menu != 'q':
+    if menu == 'a':
+        print("Enter a new player's jersey number:")
+        newnum = int(input())
+        print("Enter the player's rating:")
+        newrating = int(input())
+        listofjerseynums.append(newnum)
+        jersey[newnum] = newrating
+        listofjerseynums.sort()
+    elif menu == 'd':
+        print("Enter a jersey number:")
+        newnum = int(input())
+        listofjerseynums.remove(newnum)
+
+        del jersey[newnum]
+    elif menu == 'u':
+        print("Enter a jersey number:")
+        newnum = int(input())
+        print("Enter a new rating for player:")
+        newrating = int(input())
+        jersey[newnum] = newrating
+    elif menu == 'r':
+        print("Enter a rating:\n")
+        newrating = int(input())
+        print("ABOVE", newrating)
+        for i in listofjerseynums:
+            if jersey[i] > newrating:
+                print(f'Jersey number: {i}, Rating: {jersey[i]}')
+    elif menu == 'o':
+        print("ROSTER")
+        for i in listofjerseynums:
+            print(f'Jersey number: {i}, Rating: {jersey[i]}')
+    menu = input()
+    print()
+    printMenu()
+
+
+    
