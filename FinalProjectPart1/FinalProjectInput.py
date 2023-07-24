@@ -148,13 +148,3 @@ if __name__ == '__main__':
 
     # create a list for each item type
     my_item_type_list = []
-
-    # create a csv file for each type of item
-
-    with open(file_manufacturer_list, 'r') as csvfile:
-        file_reader = csv.reader(csvfile, delimiter=',')
-        line_num = 0  # this is here *existing*
-        # reads each line in the file
-        for information in file_reader:
-            itemtype = information[2]
-            my_item_type_list.append(itemtype)
