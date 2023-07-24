@@ -228,3 +228,41 @@ if __name__ == '__main__':
     # time to sort service date list
     my_service_list.sort(key=sort_by_service_date, reverse=True)
     # print(my_service_list[1].date)
+
+    pure_list_of_dates = []
+    for my_item in my_service_list:
+        pure_list_of_dates.append(my_item.date)
+    pure_list_of_dates.sort()
+    my_sorted_list = sorted([datetime.datetime.strptime(date, '%m/%d/%Y') for date in pure_list_of_dates])
+    [item.strftime('%m/%d/%Y') for item in my_sorted_list]
+    # print(my_sorted_list)
+    new_service_list = []
+
+    # attempt to sort
+    for my_item in my_service_list:
+        date_list = my_item.date.split('/')
+        for date in pure_list_of_dates:
+            date_list_2 = date.split('/')
+            # sort by year, it it's less
+            if int(date_list[2]) < int(date_list_2[2]):
+                new_service_list.append(my_item)
+                # print('first')
+            # sort by month it same year
+            elif int(date_list[2]) == int(date_list_2[2]):
+                if int(date_list[0]) < int(date_list_2[0]):
+                    new_service_list.append(my_item)
+                    # print('second')
+                # sort by day if same month
+                elif int(date_list[0]) == int(date_list_2[0]):
+                    if int(date_list[1]) < int(date_list_2[1]):
+                        new_service_list.append(my_item)
+                        # print('third')
+            else:
+                new_service_list.append(my_item)
+        if my_item in new_service_list:
+            if new_service_list.count(my_item) > 1:
+                new_service_list.remove(my_item)
+            else:
+                continue
+        else:
+            new_service_list.append(my_item)
