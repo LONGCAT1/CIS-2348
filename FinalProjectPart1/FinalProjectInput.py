@@ -148,3 +148,43 @@ if __name__ == '__main__':
 
     # create a list for each item type
     my_item_type_list = []
+
+    # create a csv file for each type of item
+
+    with open(file_manufacturer_list, 'r') as csvfile:
+        file_reader = csv.reader(csvfile, delimiter=',')
+        line_num = 0  # this is here *existing*
+        # reads each line in the file
+        for information in file_reader:
+            itemtype = information[2]
+            my_item_type_list.append(itemtype)
+
+    my_temp_item_list = []
+    for item_type in my_item_type_list:
+        # type is the type of items in the list
+        # don't forget to clear list at the end of the for loop
+        for my_item in my_item_list:
+            # my_item each inventory item in the list previously created
+            if my_item.type == item_type:
+                my_temp_item_list.append(my_item)
+        # for loop added all the items of the same type into the list
+
+        # sort items by id
+
+        my_temp_item_list.sort(key=sort_by_item_id)
+
+        # after adding the same type, add to item's file
+
+        item_type_file = item_type + "Inventory.csv"
+        with open(item_type_file, 'w', newline="") as csvfile:
+            write_to_file = csv.writer(csvfile, delimiter=',')
+            for items in my_temp_item_list:
+                temp_write_list = [items.item_id, items.manufacturer, items.price, items.date, items.damaged]
+                write_to_file.writerow(temp_write_list)
+        # end of for loop
+        # clear temp list
+        my_temp_item_list.clear()
+        # repeat for all the other item types
+    # works
+
+    # finished adding items by list to csv
