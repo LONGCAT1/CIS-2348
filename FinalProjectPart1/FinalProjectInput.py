@@ -54,18 +54,6 @@ def sort_by_day(item):
     return item.date[0:month_index]
 
 
-"""class InventoryReports:
-    def __init__(self, item_list):
-        self.item_list = item_list
-
-    # FullInventory.csv part
-    def fullInventory(self):
-        with open("FullInventory.csv", 'w') as file:
-            list_items = self.item_list
-            dict_manufacturer_list = sorted(list_items.values())
-            for list in dict_manufacturer_list:"""
-
-
 if __name__ == '__main__':
     # input files
     file_manufacturer_list = "ManufacturerList.csv"
@@ -323,4 +311,3 @@ if __name__ == '__main__':
             temp_write_list = [my_item.item_id, my_item.manufacturer, my_item.type,
                                my_item.price, my_item.date]
             write_file.writerow(temp_write_list)
-
