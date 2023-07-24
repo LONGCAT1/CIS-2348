@@ -266,3 +266,27 @@ if __name__ == '__main__':
                 continue
         else:
             new_service_list.append(my_item)
+
+    new_service_list.sort(key=sort_by_month)
+    # new_service_list.sort(key=sort_by_day)
+    new_service_list.sort(key=sort_by_year)
+
+    # print(new_service_list[0].date, new_service_list[1].date, new_service_list[2].date)
+    # works now ... i think
+
+    with open('PastServiceDateInventory.csv', 'w', newline="") as csvfile:
+        file_write = csv.writer(csvfile, delimiter=',')
+        for my_item in new_service_list:
+            if my_item.damaged == '':
+                temp_write_list = [my_item.item_id, my_item.manufacturer, my_item.type,
+                                   my_item.price, my_item.date]
+            else:
+                temp_write_list = [my_item.item_id, my_item.manufacturer, my_item.type,
+                                   my_item.price, my_item.date, my_item.damaged]
+            file_write.writerow(temp_write_list)
+
+    # starting damaged inventory csv file
+    # Each row should contain : item ID, manufacturer name, item type, price, and service date
+    # items must appear in the order of most expensive to least expensive
+
+    my_list_of_damaged_items = []
