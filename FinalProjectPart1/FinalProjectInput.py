@@ -188,3 +188,43 @@ if __name__ == '__main__':
     # works
 
     # finished adding items by list to csv
+
+    # commencing past service date inventory csv
+    # row should contain: item ID, manufacturer name, item type, price, service date, and list if it is damaged
+    # order of service date from oldest to most recent
+    my_service_list = []
+
+    # get today's date, then set the month day and year
+
+    for item_past_date in my_item_list:
+        # this is calling today's date
+        today = datetime.date.today()
+        today_year = int(today.year)
+        today_month = int(today.month)
+        today_day = int(today.day)
+
+        # this is the service date
+        current_item_date = item_past_date.date
+        current_item_date_list = current_item_date.split('/')
+
+        current_item_month = int(current_item_date_list[0])
+        current_item_day = int(current_item_date_list[1])
+        current_item_year = int(current_item_date_list[2])
+
+        if today_year > current_item_year:
+            # if today's date, the year is greater than service date year, add to list
+            my_service_list.append(item_past_date)
+            # print("hello ", current_item_year)
+        elif today_year == current_item_year:
+            if today_month > current_item_month:
+                my_service_list.append(item_past_date)
+                # print("here ", current_item_month)
+            elif today_month == current_item_month:
+                if today_day > current_item_day:
+                    # print("stupid ", item_past_date)
+                    my_service_list.append(item_past_date)
+        # finished adding all the items with service dates before today's date
+
+    # time to sort service date list
+    my_service_list.sort(key=sort_by_service_date, reverse=True)
+    # print(my_service_list[1].date)
