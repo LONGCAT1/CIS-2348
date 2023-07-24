@@ -1,1 +1,16 @@
+# Kimberly Jin
+# 2053517
 
+
+# this is the readme file for final project part 1
+
+# i thought each time i was saving my file on pycharm, it was linking up to github but it wasn't
+# so i just made multiple commits by pasting parts of the code each time before turning it in 
+
+# i tried to get the sort date, and i tried some other stuff, not sure if it entirely works
+
+# several def functions to sort for each thing asked, like full inventory, service dates, item types files, damaged inventory
+
+# i opened each input file one at a time
+
+# when writing to each csv file, i tried to get rid of the newline that appeared, but for some reason it's there 
