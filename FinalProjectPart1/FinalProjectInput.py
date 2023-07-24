@@ -290,3 +290,24 @@ if __name__ == '__main__':
     # items must appear in the order of most expensive to least expensive
 
     my_list_of_damaged_items = []
+
+    for my_item in my_item_list:
+        if my_item.damaged != '':
+            my_list_of_damaged_items.append(my_item)
+
+    # sort the list of damaged items by price
+
+    my_list_of_damaged_items.sort(key=sort_by_item_price, reverse=True)
+
+    # reverse is true cause want to sort by highest price to smallest price
+
+    # add list to csv file
+
+    with open('DamagedInventory.csv', 'w', newline="") as csvfile:
+        write_file = csv.writer(csvfile, delimiter=',')
+        for my_item in my_list_of_damaged_items:
+            # make a list in the order
+
+            temp_write_list = [my_item.item_id, my_item.manufacturer, my_item.type,
+                               my_item.price, my_item.date]
+            write_file.writerow(temp_write_list)
