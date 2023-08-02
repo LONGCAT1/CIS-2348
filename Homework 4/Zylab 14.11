@@ -1,0 +1,24 @@
+# Kimberly Jin
+# 2053517
+
+def selection_sort(numbers):
+    for i in range(len(numbers) - 1):
+        # Find index of smallest remaining element
+        index_largest = i
+        for j in range(i + 1, len(numbers)):
+            if numbers[j] > numbers[index_largest]:
+                index_largest = j
+    
+        # Swap numbers[i] and numbers[index_smallest]
+        
+        temp = numbers[i]
+        numbers[i] = numbers[index_largest]
+        numbers[index_largest] = temp
+        print(numbers)
+        
+numbers = input().split()
+
+for i in range(0, len(numbers)):
+    numbers[i] = int(numbers[i])
+
+selection_sort(numbers)
