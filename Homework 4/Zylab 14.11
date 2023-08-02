@@ -1,7 +1,7 @@
 # Kimberly Jin
 # 2053517
 
-def selection_sort(numbers):
+def selection_sort_descend_trace(numbers):
     for i in range(len(numbers) - 1):
         # Find index of smallest remaining element
         index_largest = i
@@ -17,10 +17,13 @@ def selection_sort(numbers):
         # print list
         for i in range(len(numbers)):
             print(numbers[i], end=' ')
+        print()
         
-numbers = input().split()
 
-for i in range(0, len(numbers)):
-    numbers[i] = int(numbers[i])
+if __name__ == "__main__":
+    numbers = input().split()
 
-selection_sort(numbers)
+    for i in range(0, len(numbers)):
+        numbers[i] = int(numbers[i])
+
+    selection_sort_descend_trace(numbers)
