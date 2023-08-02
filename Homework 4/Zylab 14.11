@@ -14,7 +14,9 @@ def selection_sort(numbers):
         temp = numbers[i]
         numbers[i] = numbers[index_largest]
         numbers[index_largest] = temp
-        print(numbers)
+        # print list
+        for i in range(len(numbers)):
+            print(numbers[i], end=' ')
         
 numbers = input().split()
 
