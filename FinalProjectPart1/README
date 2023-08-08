@@ -14,3 +14,6 @@
 # i opened each input file one at a time
 
 # when writing to each csv file, i tried to get rid of the newline that appeared, but for some reason it's there 
+
+
+# now includes part 2
