@@ -311,3 +311,141 @@ if __name__ == '__main__':
             temp_write_list = [my_item.item_id, my_item.manufacturer, my_item.type,
                                my_item.price, my_item.date]
             write_file.writerow(temp_write_list)
+
+    # part 2
+
+    # make a manufacturer and item type list first
+
+    item_types_list = []
+    manufacturer_list = []
+
+    for item in items_dict:
+        cur_manufacturer = items_dict[item]['manufacturer']
+        cur_item_type = items_dict[item]['type']
+        temp = cur_manufacturer.strip()
+        if temp not in manufacturer_list:
+            manufacturer_list.append(temp)
+        if cur_item_type not in item_types_list:
+            item_types_list.append(cur_item_type)
+
+    # list for item type and manufacturer are made
+    # print(manufacturer_list)
+    # get user input
+    menu_option = input("Enter manufacturer and item type such as Apple laptop or enter 'q' to quit\n")
+    menu_words = menu_option.split()
+
+    while menu_option != "q":
+        # print(menu_words)
+        selected_item_type = "None"
+        selected_manufacturer = "None"
+        item_found = False
+        manufacturer_found = False
+        for i in menu_words:
+            if i in item_types_list:
+                selected_item_type = i
+                item_found = True
+                # print(i, "item type")
+            for item in manufacturer_list:
+                temp = item+" "
+                if i == temp or i == item:
+                    selected_manufacturer = i
+                    manufacturer_found = True
+                    # print(i, "manufacturer")
+            """if i in manufacturer_list:
+                selected_manufacturer = i
+                manufacturer_found = True
+                print(i, "manufacturer")"""
+
+        if item_found and manufacturer_found:
+            # print("entered true")
+            my_item_list.sort(key=sort_by_item_price, reverse=True)
+            # reverse is true to sort from high to low
+            # want to output item WITH HIGHEST PRICE
+
+            # want to also consider other similar items so make a list
+
+            list_of_item_to_consider = []
+            possible_items_list = []
+
+            # do not provide items past service date or damaged
+            # provide most expensive item
+            # print("proceeding to check item service list")
+            for item in my_item_list:
+                compare = item.manufacturer.strip()
+                if selected_manufacturer == compare:
+                    # print(item.manufacturer, "checking if item manufacturer matches")
+                    # check if it's damaged or not first
+                    if item.damaged == "":
+                        # check if it matches the item user wants
+                        if selected_item_type == item.type:
+                            # print(item.type, "checking if item type matches")
+                            possible_items_list.append(item)
+
+            # need to filter possible items
+            # print("now checking item list")
+            for item in possible_items_list:
+                # check service date
+
+                today = datetime.date.today()
+                today_month = int(today.month)
+                today_day = int(today.day)
+                today_year = int(today.year)
+
+                # this is the service date
+                current_item_date = item.date
+                current_item_date_list = current_item_date.split('/')
+
+                current_item_month = int(current_item_date_list[0])
+                current_item_day = int(current_item_date_list[1])
+                current_item_year = int(current_item_date_list[2])
+
+                # reusing code
+                if today_year < current_item_year:
+                    # if today's date, the year is less than service date year, add to list
+                    list_of_item_to_consider.append(item)
+                    # print("hello ", current_item_year)
+                elif today_year == current_item_year:
+                    # if the year for today and service date is same
+                    # compare the month
+                    # if today's date, the month is less than service month, add to list
+                    if today_month < current_item_month:
+                        list_of_item_to_consider.append(item)
+                        # print("here ", current_item_month)
+                    # if service date and today date month is same
+                    elif today_month == current_item_month:
+                        # compare the days in the month
+                        if today_day < current_item_day:
+                            # print("stupid ", item_past_date)
+                            list_of_item_to_consider.append(item)
+                # finished adding all the items with service dates before today's date
+            # ok list if finished, let's print
+            # let's sort again, to make sure all item's are sorted by most expensive
+            # reverse is true so highest price first
+            list_of_item_to_consider.sort(key=sort_by_item_price, reverse=True)
+            if len(list_of_item_to_consider) == 0:
+                print("No such item in inventory")
+            else:
+                for item in list_of_item_to_consider:
+                    # print("hello is item info printing?")
+                    if list_of_item_to_consider[0] == item:
+                        print("Your item is:", item.item_id, item.manufacturer, item.type, item.price)
+                    else:
+                        print("You may, also, consider", item.item_id, item.manufacturer, item.type, item.price)
+
+        else:
+            print("No such item in inventory")
+
+        # get menu option input
+        menu_option = input("Enter manufacturer and item type such as Apple laptop or enter 'q' to quit\n")
+        menu_words = menu_option.split()
+
+    # item_id=item['item_id'],
+    # manufacturer=item['manufacturer'],
+    # type=item['type'],
+    # price=item['price'],
+    # date=item['date'],
+    # damaged=item['damaged']))
+
+    # for inventoryItem in my_item_list:
+    # fullInventory.writerow([inventoryItem.item_id, inventoryItem.manufacturer, inventoryItem.type,
+    # inventoryItem.price, inventoryItem.date, inventoryItem.damaged])
